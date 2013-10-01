@@ -6,7 +6,11 @@ $(document).ready(function() {
       .prepend('<input type="checkbox" name="asin" value="'+$(this).attr('asin')+'">');
   });
 
+  $('#pagination').prepend('<input type="button" id="bulkSelect" value="Select all Bulk Items">');
   $('#pagination').prepend('<input type="button" id="bulkDelete" value="Bulk Delete">');
+  $('#bulkSelect').click(function() {
+    $('input[name=asin]').attr('checked','checked');
+  });
   $('#bulkDelete').click(function() {
     $('input[name=asin]:checked').each(function() {
 //      alert($(this).val());
